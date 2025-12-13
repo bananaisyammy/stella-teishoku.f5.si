@@ -28,12 +28,16 @@ let hitori = false
 let kyouryoku = false
 let batoru = false
 let modoru = true
-
+var player1Img;
+var player2Img;
 
 function setup() {
-  
+  frameRate(40);
   createCanvas(canvasX, canvasY);
-  
+  player1Img = loadImage('player1.png');
+  player2Img = loadImage('player2.png');
+  woodFirstImg = loadImage('woodFirst.png');
+  webImg = loadImage('web.png');
   background(canvasColor);
   alert("一人ならF、二人で協力ならG,二人でバトルならHを押してね。Rを押せば戻れるよ")
 }
@@ -132,17 +136,17 @@ function draw() {
       score += 1
     }
     fill("#00ff00")
-    quad(wallX,0,wallX+250,0,wallX+250,wallY,wallX,wallY)
-    quad(wallX,wallY+300,wallX+250,wallY+300,wallX+250,600,wallX,600)
+    //quad(wallX,0,wallX+250,0,wallX+250,wallY,wallX,wallY)
+    //quad(wallX,wallY+300,wallX+250,wallY+300,wallX+250,600,wallX,600)
+    image(woodFirstImg, wallX-100, wallY+210, 450, 600-wallY+210);
+    image(webImg, wallX, (wallY<250) ? wallY-250 : 0, 250, 250);
     if(wallX<-250){
       wall = true
     }
     wallX -= 3
-    fill("#ffff00")
     noStroke();
-    square(squareX,squareY ,50)
-    fill("#00ffff")
-    square(squareX2,squareY2 ,50)
+    image(player1Img, squareX, squareY, 50, 50);
+    image(player2Img, squareX2, squareY2, 50, 50);
     if(squareY<-20 || squareY>580){
       alert("水色の勝ち")
       squareX = 100
@@ -287,13 +291,14 @@ function draw() {
     }
     quad(wallX,0,wallX+250,0,wallX+250,wallY,wallX,wallY)
     quad(wallX,wallY+200,wallX+250,wallY+200,wallX+250,600,wallX,600)
+    image(woodFirstImg, wallX-100, wallY+210, 450, 600-wallY+210);
+    image(webImg, wallX, (wallY<250) ? wallY-250 : 0, 250, (wallY<250) ? 2*wallY-250 : wallY);
     if(wallX<-250){
       wall = true
     }
     wallX -= 3
-    fill("#ffff00")
     noStroke();
-    square(squareX,squareY ,50)
+    image(player1Img, squareX, squareY, 50, 50);
     if(squareY<-20 || squareY>580){
       alert("DEATH")
       squareX = 100
@@ -348,17 +353,17 @@ function draw() {
       wallX = 1300
       score += 1
     }
-    quad(wallX,0,wallX+250,0,wallX+250,wallY,wallX,wallY)
-    quad(wallX,wallY+200,wallX+250,wallY+200,wallX+250,600,wallX,600)
+    //quad(wallX,0,wallX+250,0,wallX+250,wallY,wallX,wallY)
+    //quad(wallX,wallY+200,wallX+250,wallY+200,wallX+250,600,wallX,600)
+    image(woodFirstImg, wallX-100, wallY+210, 450, 600-wallY+210);
+    image(webImg, wallX, (wallY<250) ? wallY-250 : 0, 250, 250);
     if(wallX<-250){
       wall = true
     }
     wallX -= 3
-    fill("#ffff00")
     noStroke();
-    square(squareX,squareY ,50)
-    fill("#00ffff")
-    square(squareX2,squareY2 ,50)
+    image(player1Img, squareX, squareY, 50, 50);
+    image(player2Img, squareX2, squareY2, 50, 50);
     if(squareY<-20 || squareY>580){
       alert("DEATH")
       squareX = 100
