@@ -36,8 +36,9 @@ function setup() {
     // loadSound in preload ensures the buffer is ready and avoids runtime RingBuffer errors
     wallBounceSound = loadSound('wallBounce.mp3');
     barBounceSound = loadSound('barBounce.mp3');
-    barBounceSound.setVolume(0.05);
-
+    gotPointSound = loadSound('gotPoint.mp3');
+    barBounceSound.setVolume(0.1);
+    gotPointSound.setVolume(0.7);
     createCanvas(canvasX, canvasY);
     background(backgroundImg);
     
@@ -71,6 +72,7 @@ function draw() {
     }
     //左右壁当たり判定
     if (ballX > 800) {
+        gotPointSound.play(0,1);
         alert("PLAYER1に+1点!")
         score1 += 1
         player1X = 50
@@ -92,7 +94,8 @@ function draw() {
         }
     }
     if (ballX < 0) {
-        alert("PLAYER2に+１点!")
+        gotPointSound.play(0,1);
+        alert("PLAYER2に+1点!")
         score2 += 1
         player1X = 50
         player1Y = 150
