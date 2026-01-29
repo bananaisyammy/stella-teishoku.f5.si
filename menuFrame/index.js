@@ -47,19 +47,19 @@ window.onload = function () {
 
 
     this.document.getElementById("tab0").style.width = 285 * widthPercent + "px";
-    this.document.getElementById("tab0").style.left = 360 * widthPercent + "px";
+    this.document.getElementById("tab0").style.left = 345 * widthPercent + "px";
     this.document.getElementById("tab0").style.backgroundColor = "#15474B";
 
     this.document.getElementById("tab1").style.width = 285 * widthPercent + "px";
-    this.document.getElementById("tab1").style.left = 660 * widthPercent + "px";
+    this.document.getElementById("tab1").style.left = 645 * widthPercent + "px";
     this.document.getElementById("tab1").style.backgroundColor = "#207070";
 
     this.document.getElementById("tab2").style.width = 285 * widthPercent + "px";
-    this.document.getElementById("tab2").style.left = 960 * widthPercent + "px";
+    this.document.getElementById("tab2").style.left = 945 * widthPercent + "px";
     this.document.getElementById("tab2").style.backgroundColor = "#207070";
     
     this.document.getElementById("tab3").style.width = 300 * widthPercent + "px";
-    this.document.getElementById("tab3").style.left = 1260 * widthPercent + "px";
+    this.document.getElementById("tab3").style.left = 1245 * widthPercent + "px";
     this.document.getElementById("tab3").style.backgroundColor = "#207070";
 
     //shadow位置調整
